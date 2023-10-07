@@ -1,25 +1,48 @@
-import logo from './logo.svg';
 import './App.css';
+import Header from './components/Header';
+import Counter from './components/Counter';
+import CounterTwo from './components/Counter_two';
+import ReducerCounter from './components/ReducerCounter';
 
-function App() {
+
+const App = () => {
+
+  const name = 'Anastasia';
+  const user = () => {
+    return 'Anastasia';
+  };
+
   return (
     <div className="App">
+
+      {/* three ways of calling the component and passing props */}
+
+      {Header({ heading: "Wellcome!" })}
+      <Header heading="About us" />
+      <Header heading="Cart" anotherArg=" & more stuff">
+        <div>
+          <h3>
+            Children
+          </h3>
+        </div>
+      </Header>
+
+
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+        <Counter />
+        <CounterTwo />
+        <ReducerCounter />
         <p>
-          Edit <code>src/App.js</code> and save to reload.
+          const name: {name}
+          <br>
+          </br>
+          function user: {user()}
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
       </header>
     </div>
   );
-}
+};
 
 export default App;
+
+//heading="about us" are props
